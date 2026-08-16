@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
-ARG PLEX_VERSION=1.43.3.10828-00f62d37d
+ARG PLEX_VERSION=1.43.3.10861-07dfddaeb
 
 # hadolint ignore=DL3008
 RUN \
@@ -16,7 +16,7 @@ RUN \
     && apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet=1.6.1-4 \
+        xmlstarlet=1.6.1-5 \
         uuid-runtime=2.41-5 \
         unrar=1:7.1.8-1 \
     \
