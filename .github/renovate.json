@@ -40,7 +40,7 @@
       "managerFilePatterns": ["//Dockerfile$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "\\s\\s(?<depName>[a-z0-9][a-z0-9-]+)=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
+        "\\s\\s(?<depName>[a-z0-9][a-z0-9-]+)>?=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
       ],
       "versioningTemplate": "deb",
       "datasourceTemplate": "repology",
