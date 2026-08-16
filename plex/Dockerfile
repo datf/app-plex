@@ -9,17 +9,19 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 ARG PLEX_VERSION=1.43.3.10861-07dfddaeb
 
-# hadolint ignore=DL3008
+# hadolint ignore=DL3008,DL3059
 RUN \
     echo "deb http://deb.debian.org/debian trixie contrib non-free" \
         >> /etc/apt/sources.list \
     && apt-get update
 
+# hadolint ignore=DL3059
 RUN apt-get install -y --no-install-recommends \
         xmlstarlet=1.6.1-4 \
-        uuid-runtime=2.41-5 \
+        uuid-runtime=2.41.5-0+deb13u1 \
         unrar=1:7.1.8-1
 
+# hadolint ignore=DL3059
 RUN if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
     \
@@ -28,6 +30,7 @@ RUN if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     \
     && dpkg --install /tmp/plexmediaserver.deb
 
+# hadolint ignore=DL3059
 RUN apt-get -y clean \
     && rm -fr \
         /tmp/* \
