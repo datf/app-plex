@@ -1,8 +1,8 @@
 > [!IMPORTANT]
 > This fork needs its own repository installed in Home Assistant!
-> 
+>
 > To install this add-on:
-> 
+>
 > 1. Add the following repository URL to your Home Assistant Add-on Store:
 >    `https://github.com/datf/hassio-addons`
 > 2. Search for **Plex** and click Install.
